@@ -302,6 +302,7 @@ impl FromStr for CongestionControlAlgorithm {
             "reno" => Ok(CongestionControlAlgorithm::Reno),
             "cubic" => Ok(CongestionControlAlgorithm::CUBIC),
             "bbr" => Ok(CongestionControlAlgorithm::BBR),
+            "noop" => Ok(CongestionControlAlgorithm::NoOp),
             #[cfg(not(feature = "gcongestion"))]
             "bbr2" => Ok(CongestionControlAlgorithm::BBR2),
             #[cfg(feature = "gcongestion")]

@@ -301,6 +301,7 @@ impl From<CongestionControlAlgorithm> for &'static CongestionControlOps {
                 debug_panic!("legacy implementation, not gcongestion");
                 &bbr2::BBR2
             },
+            CongestionControlAlgorithm::NoOp => &noop::NOOP,
         }
     }
 }
@@ -317,3 +318,4 @@ mod reno;
 
 #[cfg(test)]
 mod test_sender;
+mod noop;
